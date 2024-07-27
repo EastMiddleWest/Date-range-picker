@@ -1,0 +1,37 @@
+@import './variables.css';
+
+.wrapper{
+  position: relative;
+}
+
+.input{
+  padding: 0.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  min-width: 150px;
+}
+
+.dropdown{
+  display: none;
+  gap: 0.25em;
+  position: absolute;
+  top: 150%;
+  left: 0;
+  padding: 0.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  animation: appear 0.5s ease;
+}
+
+.dropdown-opened{
+  display: flex;
+}
+
+@keyframes appear{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

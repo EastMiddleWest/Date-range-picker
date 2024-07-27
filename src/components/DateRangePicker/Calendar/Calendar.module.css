@@ -1,0 +1,101 @@
+@import '../variables.css';
+
+.calendar{
+  display: grid;
+  grid-template-columns: repeat(7, var(--day-cell_size));
+  grid-auto-rows: var(--day-cell_size);
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.control{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control > span{
+  display: inline-block;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.days{
+  display: flex;
+}
+
+.days > span{
+  display: inline-block;
+  width: var(--day-cell_size);
+}
+
+.date{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.date:hover::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.today{
+  color: var(--today);
+}
+
+.another_month{
+  color: var(--border-color);
+  pointer-events: none;
+}
+
+.first-selected, .last-selected, .single-selected{
+  position: relative;
+  background-color: var(--selected-day-color);
+  border-radius: 50%;
+}
+
+.first-selected::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--in-range-day-color);
+  z-index: -1;
+}
+
+.last-selected::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--in-range-day-color);
+  z-index: -1;
+
+}
+
+.in_range{
+  background-color: var(--in-range-day-color);
+}

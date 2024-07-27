@@ -1,0 +1,10 @@
+
+:root{
+  --bg-color: #292929;
+  --today: rgb(83, 184, 209);
+  --selected-day-color: rgb(83, 83, 209);
+  --in-range-day-color: rgba(11, 95, 173, 0.616);
+  --border-color: #e6e6e6;
+
+  --day-cell_size: 30px;
+}
